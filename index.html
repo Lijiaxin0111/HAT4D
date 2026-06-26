@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration">
+  <meta name="keywords" content="HAT-4D, monocular video, 4D reconstruction, multi-object interactions, human-agent collaboration">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAT-4D</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8E%A9%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="title-prefix">🎩</span><span class="title-highlight">HAT-4D</span>:
+              Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration
+            </h1>
+
+            <div class="is-size-5 publication-authors author-list">
+              <div class="author-line">
+                <span class="author-block">Jiaxin Li<sup>1,2,*</sup>,</span>
+                <span class="author-block">Yuxiang Wu<sup>1,*</sup>,</span>
+                <span class="author-block">Zhenkai Zhang<sup>1</sup>,</span>
+                <span class="author-block">Xinrui Shi<sup>1</sup>,</span>
+                <span class="author-block">Haoyuan Wang<sup>1</sup></span>
+              </div>
+              <div class="author-line">
+                <span class="author-block">Yichen Zhao<sup>1,†</sup>,</span>
+                <span class="author-block">Su Linxiang<sup>1,†</sup>,</span>
+                <span class="author-block">Chenyang Yu<sup>1</sup>,</span>
+                <span class="author-block">Mingyu Zhang<sup>1</sup>,</span>
+                <span class="author-block">Yifan Ding<sup>2</sup></span>
+              </div>
+              <div class="author-line">
+                <span class="author-block">Boran Wen<sup>1,2</sup>,</span>
+                <span class="author-block">Li Zhang<sup>3</sup>,</span>
+                <span class="author-block">Ruiyang Liu<sup>4</sup>,</span>
+                <span class="author-block">Yong-Lu Li<sup>1,2,‡</sup></span>
+              </div>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">ECCV 2026</span>
+            </div>
+            <div class="is-size-6 publication-authors affiliations">
+              <span class="author-block"><sup>1</sup> Shanghai Jiao Tong University (SJTU)</span>
+              <span class="author-block"><sup>2</sup> Shanghai Innovation Institute (SII)</span>
+            </div>
+            <div class="is-size-6 publication-authors venue-note">
+              <a href="https://mvig-rhos.com/">RHOS Team</a>
+            </div>
+            <div class="is-size-6 publication-authors author-notes">
+              <span class="author-block"><sup>*</sup> Equal contribution</span>
+              <span class="author-block"><sup>†</sup> Internship</span>
+              <span class="author-block"><sup>‡</sup> Corresponding author</span>
+            </div>
+
+            <div class="publication-links">
+              <button class="button is-normal is-rounded soon-button" type="button">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper Coming Soon</span>
+              </button>
+              <button class="button is-normal is-rounded soon-button" type="button">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv Coming Soon</span>
+              </button>
+              <button class="button is-normal is-rounded soon-button" type="button">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code Coming Soon</span>
+              </button>
+              <button class="button is-normal is-rounded soon-button" type="button">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span>Dataset Coming Soon</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container is-max-desktop">
+      <figure class="teaser-figure">
+        <img src="./assets/teaser_new.jpg" alt="HAT-4D teaser">
+      </figure>
+      <p class="tldr">
+        <strong>HAT-4D</strong> reconstructs the 3D geometry, temporal dynamics, and physical interactions of multiple
+        objects from a single in-the-wild monocular video through human-agent collaboration.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Abstract</h2>
+      <div class="content has-text-justified project-copy">
+        <p>
+          Extracting dynamic 4D object interactions from massive, in-the-wild monocular videos offers a highly efficient
+          data collection pathway for scaling Embodied AI and training Vision-Language-Action (VLA) models. However,
+          existing monocular 4D reconstruction methods primarily focus on isolated objects, often failing under the
+          severe occlusions and complex dynamics inherent in multi-object interactions. To bridge this gap, we propose
+          HAT-4D, the first agentic framework designed to reconstruct the 3D geometry, temporal dynamics, and physical
+          interactions of multiple objects from a single video. By integrating Vision-Language Models (VLMs) with a
+          multi-level human-in-the-loop feedback mechanism, HAT-4D efficiently resolves depth ambiguities and
+          interaction-induced occlusions during 3D generation and 4D propagation, yielding physically plausible assets
+          without relying on expensive multi-camera rigs. Functioning as a scalable data engine, HAT-4D facilitates the
+          creation of MVOIK-4D, an open-world benchmark for monocular 4D interaction reconstruction, accompanied by a
+          novel multi-dimensional evaluation protocol focused on physical plausibility and temporal consistency.
+          Extensive experiments on MVOIK-4D demonstrate that HAT-4D achieves state-of-the-art performance on most
+          evaluation metrics, while maintaining competitive semantic alignment. Ablation studies show that introducing a
+          small amount of human feedback significantly improves interaction reconstruction. In addition, the data
+          produced by HAT-4D effectively improves baseline performance when used for finetuning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Method Overview</h2>
+      <div class="figure-panel">
+        <img src="./assets/method_v10_camera_ready.jpg" alt="HAT-4D method overview">
+        <div class="figure-caption">
+          <strong>Overview of HAT-4D.</strong> The framework extracts an interaction knowledge graph from a monocular
+          video, reconstructs and composes interacting objects, and uses memory-guided 4D propagation with agent and
+          human feedback to refine failed cases.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Interaction Knowledge Graph (IKG)</h2>
+      <div class="figure-panel">
+        <img src="./assets/OIK_v8.jpg" alt="Interaction Knowledge Graph formulation">
+        <div class="figure-caption">
+          <strong>Interaction Knowledge Graph formulation.</strong> IKG models physical interactions as a dynamic
+          directed graph over event segments, object attributes, spatio-temporal relations, and physical constraints for
+          downstream 4D generation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Experiments</h2>
+      <div class="figure-grid">
+        <figure class="metric-figure">
+          <div class="metric-image-wrap">
+            <img src="./assets/human_intervention_ablation.jpg" alt="Human intervention ablation">
+          </div>
+          <figcaption class="figure-caption">
+            <strong>Human intervention.</strong> Allowing a small number of human annotations during generation
+            substantially improves reconstruction and interaction quality.
+          </figcaption>
+        </figure>
+        <figure class="metric-figure">
+          <div class="metric-image-wrap">
+            <img src="./assets/psnr_vs_epoch_eccv_v4.jpg" alt="PSNR versus epoch results">
+          </div>
+          <figcaption class="figure-caption">
+            <strong>View scaling.</strong> L4GM finetuning benefits from additional original, jittered, and randomly
+            sampled views on HAT-4D sequences.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 section-title">Citation</h2>
+      <pre class="bibtex"><code>@inproceedings{Li2026hat4d,
+  title     = {HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration},
+  author    = {Li, Jiaxin and Author, Second and Author, Third},
+  booktitle = {Computer Vision -- ECCV 2026},
+  year      = {2026},
+  note      = {Accepted, to appear}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered footer-note">
+      <p>This page follows the structure of concise academic project pages and is ready for GitHub Pages deployment.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
