@@ -182,13 +182,15 @@ a:hover {
 }
 
 .teaser-figure img,
+.teaser-figure video,
 .figure-panel img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.teaser-figure img {
+.teaser-figure img,
+.teaser-figure video {
   border-radius: 8px;
   border: 1px solid var(--line);
   background: #ffffff;
